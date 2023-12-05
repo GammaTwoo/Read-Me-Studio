@@ -53,6 +53,8 @@ const questions = [
 
 function writeToFile(fileName, data) {}
 
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+}
 
 init();
