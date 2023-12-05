@@ -2,6 +2,7 @@ const fs = require('fs')
 const inquirer = require('inquirer')
 const generateMarkdown = require('./utils/generateMarkdown')
 
+//put it inside its own function for code thats a bit nicer
 function promptUser() { 
     return inquirer.prompt([
         {
@@ -53,16 +54,20 @@ function promptUser() {
     ]);
 }
 
+
+// creates a file, writes the answers into it, and then puts it in a dist folder
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data)
     console.log('README.md had been successfully generated!')
 }
 
+//begins the process of generating the readme
 async function init() {
     try {
         const userResponses = await promptUser()
         const markdown = generateMarkdown(userResponses)
         writeToFile('dist/README.md', markdown)
+    // just in case something goes wrong
     } catch (error) {
         console.error('Error generating README', error)
     }
