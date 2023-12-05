@@ -62,7 +62,7 @@ async function init() {
     try {
         const userResponses = await promptUser()
         const markdown = generateMarkdown(userResponses)
-        writeToFile('README.md', markdown)
+        writeToFile('dist/README.md', markdown)
     } catch (error) {
         console.error('Error generating README', error)
     }
