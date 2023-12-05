@@ -31,7 +31,8 @@ ${data.usage}
 
 ## License
 
-${data.license}
+[![License: ${data.license}](https://img.shields.io/badge/License-${data.license}-brightgreen.svg)](https://opensource.org/licenses/${data.license})
+${data.license === 'Other' ? data.otherLicense : ''}
 
 ## Contributing
 
