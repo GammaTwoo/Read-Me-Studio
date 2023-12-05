@@ -1,9 +1,5 @@
-function renderLicenseBadge(license) {}
-
-function renderLicenseLink(license) {}
-
-function renderLicenseSection(license) {}
-
+// generates the readme based of the user inputs in the inquirer prompt
+// the licenses section generates a badge that takes you to the license when you click it, no need for rendering functions
 function generateMarkdown(data) {
   return `
 # ${data.title}
